@@ -307,7 +307,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 Pending Requests</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{count[3][0]}}</div>
                                         </div>
                                         <div class="col-auto">
                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chat-text" viewBox="0 0 16 16">
@@ -469,7 +469,7 @@
                                     <div class="card bg-primary text-white shadow">
                                         <div class="card-body">
                                             Total number of flats for rent &nbsp;&nbsp;&nbsp;
-                                            <div class="text-white-50 small">50</div>
+                                            <div class="text-white-50 small">{{count[1][0]}}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -485,7 +485,7 @@
                                     <div class="card bg-info text-white shadow">
                                         <div class="card-body">
                                             Total number of users hitherto &nbsp;&nbsp;&nbsp;
-                                            <div class="text-white-50 small">2574</div>
+                                            <div class="text-white-50 small">{{count[2][0]}}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -510,7 +510,7 @@
                                     <div class="card bg-dark text-white shadow">
                                         <div class="card-body">
                                             Admin Count &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <div class="text-white-50 small">1</div>
+                                            <div class="text-white-50 small">{{count[0][0]}}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -532,7 +532,7 @@
 <!--                                    &nbsp;<a href="*" style="text-decoration:none"><button type="button" class="btn btn-warning btn-lg btn-block">Delete house</button></a>-->
                                     &nbsp;<a href="view" style="text-decoration:none"><button type="button" class="btn btn-danger btn-lg btn-block">View flats</button></a>
                                     &nbsp;<a href="viewusers" style="text-decoration:none"><button type="button" class="btn btn-secondary btn-lg btn-block">View Users</button></a>
-                                    &nbsp;<a href="!" style="text-decoration:none"><button type="button" class="btn btn-info btn-lg btn-block">Forgot Pin</button></a>
+                                    &nbsp;<a href="/frgt" style="text-decoration:none"><button type="button" class="btn btn-info btn-lg btn-block">Forgot Pin</button></a>
 <!--                                    &nbsp;<a href="#" style="text-decoration:none"><button type="button" class="btn btn-secondary btn-lg btn-block">Delete User</button></a>-->
 
 
@@ -562,12 +562,21 @@
 
                                 </div>
                                 <div class="card-body">
+
                                     {%for i in req%}
+
+
+
 
                                      <form method="post">
                                         <p>{{i[0]}}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             {{i[1]}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                             <span style="color:green"> Strong Password </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                                                 {% if i[2] %} <span style="color:green">Strong Password </span>{%endif%}
+
+
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                                         <input type=hidden value="{{ i[0] }}" name="nm" />
                                             <button type="submit" class="btn btn-success" name="adm"  value="Grant Access">Grant Access</button>

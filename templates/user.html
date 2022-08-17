@@ -66,15 +66,16 @@
       <div id="content" class="p-4 p-md-5 pt-5">
 		  <div class="alert alert-primary" role="alert">
   {{name}}, We are happy to have you here!!
-</div>
+		  </div>
 <!--ip-{{ip}} and device name={{devnm}}-->
 
 
   <div class="row">
   {% for item in data %} &nbsp;&nbsp;&nbsp;&nbsp;
-<div class="card bg-light mb-3"  style="width: 18rem;">
+<div class="shadow p-3 mb-5 bg-white rounded">
+	  <div class="card bg-light mb-3"  style="width: 20rem;border: none;">
   <img class="card-img-top" src="static\img\2.jpg" alt="Images">
-  <div class="card-body">
+  <div class="card-body" style="border: none;">
     <h5 class="card-title">{{item[0]}}</h5>
     <p class="card-text">{{item[2]}}.</p>
 <!--    <a href="#" class="btn btn-outline-success">View More&gt;</a>-->
@@ -89,13 +90,13 @@
 </div>
 
 	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        {% endfor %}
-</div>
 
+</div>
+	{% endfor %}
 
 		  </div>
 		</div>
-
+		</div>
 
   </body>
 </html>
